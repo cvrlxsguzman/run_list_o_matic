@@ -1,0 +1,21 @@
+animal_list = ['cat', 'goat', 'cat']
+
+def run_list_o_matic():
+    if user_animal == '':
+        return print(animal_list.pop(), 'popped from list', '\n')
+        animal_list.pop()
+    elif user_animal in animal_list:
+        animal_list.remove(user_animal)
+        return print('1 instance of', user_animal, 'removed from list', '\n')
+    elif user_animal not in animal_list:
+        animal_list.append(user_animal)
+        return print('1 instance of', user_animal, 'appended to list', '\n')
+    
+while animal_list != []:
+    print('look at all the animals', animal_list)
+    user_animal = input('enter the name of an animal: ')
+    if user_animal == 'Quit':
+        break
+    else:
+        run_list_o_matic()
+print('Goodbye')
